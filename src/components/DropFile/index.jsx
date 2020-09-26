@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 
 import { uuid } from '@/utils'
 
-const dropFileWrapperStyle = {
+const defaultStyles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -29,6 +29,7 @@ const handleFileIteraction = func => ev => {
 
 const DropFile = ({ text, accept, multiple, size, onDrop, onDragOver, onChange, style }) => {
     const inputRef = useRef(null)
+    const styles = { ...defaultStyles, ...style }
 
     const handleOnDrop = eventHandlerPartial(handleFileIteraction(onDrop))
     const handleOnChange = eventHandlerPartial(
@@ -46,7 +47,7 @@ const DropFile = ({ text, accept, multiple, size, onDrop, onDragOver, onChange, 
             onClick={inputRef?.current?.click}
             onDrop={handleOnDrop}
             onDragOver={handleOnDragOver}
-            style={{ ...dropFileWrapperStyle, ...style }}
+            style={styles}
         >
             <input
                 ref={inputRef}

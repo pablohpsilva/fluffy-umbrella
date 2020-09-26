@@ -3,16 +3,43 @@ import React, { useEffect } from 'react'
 import { DropCSVJSONFile, UserList } from '@/components'
 import { useUserResolverData, useUserQuery } from '@/hooks'
 
-const loadMoreStyle = {
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center'
+const defaultStyles = {
+    drop: {},
+    list: {},
+    title: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        margin: '16px 0'
+    },
+    h2: {
+        margin: 0,
+        marginRight: 8
+    },
+    h3: {
+        margin: 0,
+        marginTop: 4
+    },
+    button: {
+        border: 'none',
+        background: 'none',
+        padding: 16,
+        outline: 'none',
+        cursor: 'pointer',
+        textTransform: 'uppercase'
+    },
+    loadMore: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
 }
 
-const UseImporter = () => {
+const UseImporter = ({ style = {} }) => {
     const { data, fetchMore, isLast, isLoading } = useUserQuery()
     const { users, resolveUsers } = useUserResolverData()
+    const styles = { ...defaultStyles, ...style }
 
     const handleOnChange = users => {
         resolveUsers(users)
@@ -28,12 +55,17 @@ const UseImporter = () => {
 
     return (
         <div>
-            <DropCSVJSONFile onChange={handleOnChange} onError={handleError} />
-            {users && users.length ? <h2>Imported users {users.length}</h2> : null}
-            <UserList users={users} />
-            <div style={loadMoreStyle}>
+            <DropCSVJSONFile onChange={handleOnChange} onError={handleError} style={styles?.drop} />
+            {users && users.length ? (
+                <div style={styles.title}>
+                    <h2 style={styles?.h2}>Imported users</h2>
+                    <h3 style={styles?.h3}>{users.length}</h3>
+                </div>
+            ) : null}
+            <UserList users={users} style={styles?.list} />
+            <div style={styles?.loadMore}>
                 {!(isLast || isLoading) && (
-                    <button onClick={fetchMore} type="button">
+                    <button onClick={fetchMore} type="button" style={styles?.button}>
                         Load more
                     </button>
                 )}
