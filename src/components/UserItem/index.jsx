@@ -86,7 +86,7 @@ const UserItem = ({ expanded = false, user = defaultUser, onClick = () => null, 
                     <span>{user?.email}</span>
                 </div>
                 <div style={styles?.gridButton}>
-                    <button type="button" onClikc={handleOnClick} style={styles?.button}>
+                    <button type="button" onClick={handleOnClick} style={styles?.button}>
                         {expanded ? '-' : '+'}
                     </button>
                 </div>
