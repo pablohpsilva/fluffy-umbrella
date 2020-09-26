@@ -86,10 +86,10 @@ npm run build
 ## PeerDependencies
 
 -   React
--   cvstojson
+-   csvtojson
 
 To install in your project do the following:
 
 ```
-npm i fluffy-umbrella react cvstojson
+npm i fluffy-umbrella react csvtojson
 ```
