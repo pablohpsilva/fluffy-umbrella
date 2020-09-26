@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 
-import DropCSVJSONFile from '.'
+import DropCVSJSONFile from '.'
 
-<Meta title="Components/DropCSVJSONFile" component={DropCSVJSONFile} />
+<Meta title="Components/DropCVSJSONFile" component={DropCVSJSONFile} />
 
-export const Template = args => <DropCSVJSONFile {...args} />
+export const Template = args => <DropCVSJSONFile {...args} />
 export const defaultProps = {
     text: 'Please click (or drop) here your .CSV or .JSON file',
     accept: '.json,.csv',
@@ -14,7 +14,7 @@ export const defaultProps = {
     onError: error => null
 }
 
-# DropCSVJSONFile
+# DropCVSJSONFile
 
 This component was created based on `DropFile` component.
 This is just a helper to handle `CSV` and `JSON` files

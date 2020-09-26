@@ -3,7 +3,7 @@ import React from 'react'
 import { DropFile } from '@/components'
 import { useCSVJSONFileData } from '@/hooks'
 
-const DropCSVJSONFile = ({ text, accept, multiple, size, onChange, onError, style }) => {
+const DropCVSJSONFile = ({ text, accept, multiple, size, onChange, onError, style }) => {
     const { readFile } = useCSVJSONFileData()
 
     const handleFileIteraction = files => {
@@ -27,7 +27,7 @@ const DropCSVJSONFile = ({ text, accept, multiple, size, onChange, onError, styl
     )
 }
 
-DropCSVJSONFile.defaultProps = {
+DropCVSJSONFile.defaultProps = {
     text: 'Please click (or drop) here your .CSV or .JSON file',
     accept: '.json,.csv',
     multiple: false,
@@ -37,4 +37,4 @@ DropCSVJSONFile.defaultProps = {
     style: {}
 }
 
-export default DropCSVJSONFile
+export default DropCVSJSONFile

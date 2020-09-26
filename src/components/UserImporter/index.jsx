@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { DropCSVJSONFile, UserList } from '@/components'
+import { DropCVSJSONFile, UserList } from '@/components'
 import { useUserResolverData, useUserQuery } from '@/hooks'
 
 const defaultStyles = {
@@ -55,7 +55,7 @@ const UseImporter = ({ style = {} }) => {
 
     return (
         <div>
-            <DropCSVJSONFile onChange={handleOnChange} onError={handleError} style={styles?.drop} />
+            <DropCVSJSONFile onChange={handleOnChange} onError={handleError} style={styles?.drop} />
             {users && users.length ? (
                 <div style={styles.title}>
                     <h2 style={styles?.h2}>Imported users</h2>
