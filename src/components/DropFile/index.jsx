@@ -8,7 +8,8 @@ const defaultStyles = {
     alignItems: 'center',
     width: '100%',
     height: 200,
-    background: 'rgba(0,0,0,.3)'
+    background: 'rgba(0,0,0,.3)',
+    cursor: 'pointer'
 }
 
 const inputId = uuid()
