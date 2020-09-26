@@ -1,10 +1,10 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 
-import DropCSVJsonFile from '.'
+import DropCSVJSONFile from '.'
 
-<Meta title="Components/DropCSVJsonFile" component={DropCSVJsonFile} />
+<Meta title="Components/DropCSVJSONFile" component={DropCSVJSONFile} />
 
-export const Template = args => <DropCSVJsonFile {...args} />
+export const Template = args => <DropCSVJSONFile {...args} />
 export const defaultProps = {
     text: 'Please click (or drop) here your .CSV or .JSON file',
     accept: '.json,.csv',
@@ -13,6 +13,24 @@ export const defaultProps = {
     onChange: ev => null,
     onError: error => null
 }
+
+# DropCSVJSONFile
+
+This component was created based on `DropFile` component.
+This is just a helper to handle `CSV` and `JSON` files
+upload on the browser.
+
+## Props
+
+| Name     | Description                                                           | Type        | default                                                 |
+| -------- | --------------------------------------------------------------------- | ----------- | ------------------------------------------------------- |
+| text     | Default text that will appear on the drop area                        | `string`    | `'Please click (or drop) here your .CSV or .JSON file'` |
+| accept   | File extensions accepted                                              | `string`    | `'.json,.csv'`                                          |
+| multiple | Accept multiple files to upload                                       | `boolean`   | `false`                                                 |
+| size     | Maximum file size                                                     | `number`    | `1e7`                                                   |
+| onChange | Whenever there's a change (file drop, file input) this will be called | `function`  | `(ev) => null`                                          |
+| onError  | Whenever there's an error, this function will be called.              | `function`  | `(ev) => null`                                          |
+| style    | CSS style extension                                                   | `CSS Style` | `{}`                                                    |
 
 <Canvas>
     <Story name="main" args={defaultProps}>

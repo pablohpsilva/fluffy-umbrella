@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { UserItem } from '@/components'
 
-const UserList = ({ users }) => {
+const UserList = ({ users, style = {} }) => {
     const [expandedUserId, setExpandedUserId] = useState(-1)
 
     const handleOnClick = ({ userId }) => {
@@ -16,9 +16,11 @@ const UserList = ({ users }) => {
             user={user}
             expanded={user?.userId === expandedUserId}
             onClick={handleOnClick}
-            style={{ borderBottom: '1px solid #000', marginBottom: 16 }}
+            style={{ borderBottom: '1px solid #000', marginBottom: 16, ...style }}
         />
     ))
 }
+
+UserList.defaultProps = { user: [], style: {} }
 
 export default UserList

@@ -55,20 +55,6 @@ const fieldsMapper = ({ userId = '', login = '', password = '', gender = '', URL
         ['URL', URL]
     ].filter(([, val]) => !!val)
 
-const defaultUser = {
-    title: '',
-    lastName: '',
-    firstName: '',
-    email: '',
-    picture: '',
-    userId: '',
-    login: '',
-    password: '',
-    gender: '',
-    URL: '',
-    address: ''
-}
-
 const UserItem = ({ expanded = false, user = defaultUser, onClick = () => null, style = {} }) => {
     const userExtraData = fieldsMapper(user)
     const handleOnClick = () => {
@@ -104,6 +90,20 @@ const UserItem = ({ expanded = false, user = defaultUser, onClick = () => null, 
             </div>
         </div>
     )
+}
+
+UserItem.defaultUser = {
+    title: '',
+    lastName: '',
+    firstName: '',
+    email: '',
+    picture: '',
+    userId: '',
+    login: '',
+    password: '',
+    gender: '',
+    URL: '',
+    address: ''
 }
 
 export default UserItem

@@ -27,23 +27,14 @@ const handleFileIteraction = func => ev => {
     func(files)
 }
 
-const DropFile = props => {
+const DropFile = ({ text, accept, multiple, size, onDrop, onDragOver, onChange, style }) => {
     const inputRef = useRef(null)
-    const {
-        text = 'Please click (or drop) here your .CSV or .JSON file',
-        accept = '.json,.csv',
-        multiple = false,
-        size = 1e7,
-        onDrop = () => null,
-        onDragOver = () => null,
-        onChange = () => null,
-        style
-    } = props
 
     const handleOnDrop = eventHandlerPartial(handleFileIteraction(onDrop))
     const handleOnChange = eventHandlerPartial(
         handleFileIteraction(files => {
             inputRef.current.value && onChange(files)
+            // Cleaning input file value
             inputRef.current.value = ''
         })
     )
@@ -70,6 +61,17 @@ const DropFile = props => {
             {text}
         </label>
     )
+}
+
+DropFile.defaultProps = {
+    text: 'Please click (or drop) here your file',
+    accept: '.json,.csv',
+    multiple: false,
+    size: 1e7,
+    onDrop: () => null,
+    onDragOver: () => null,
+    onChange: () => null,
+    style: {}
 }
 
 export default DropFile

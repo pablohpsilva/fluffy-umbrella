@@ -22,6 +22,35 @@ export const defaultProps = {
     }
 }
 
+# UserItem
+
+This component will display user related data. By clicking on it it will show all data available.
+
+## Props
+
+| Name     | Description                                             | Type                   | default      |
+| -------- | ------------------------------------------------------- | ---------------------- | ------------ |
+| expanded | Hides or shows the extra data from a given user         | `boolean`              | `false`      |
+| user     | User data for sampling                                  | `User`                 | `{...}`      |
+| onClick  | Click handler triggers when clicking on the sample area | `(user: User) => void` | `() => null` |
+| style    | CSS style extension                                     | `CSS Style`            | `{}`         |
+
+### User prop
+
+| Name      | Description | Type     | default |
+| --------- | ----------- | -------- | ------- |
+| title     | Title       | `string` | `''`    |
+| lastName  | Last name   | `string` | `''`    |
+| firstName | First name  | `string` | `''`    |
+| email     | Email       | `string` | `''`    |
+| picture   | Picture     | `string` | `''`    |
+| userId    | UserId      | `string` | `''`    |
+| login     | Login       | `string` | `''`    |
+| password  | Password    | `string` | `''`    |
+| gender    | Gender      | `string` | `''`    |
+| URL       | URL         | `string` | `''`    |
+| address   | Address     | `string` | `''`    |
+
 <Canvas>
     <Story name="main" args={defaultProps}>
         {Template.bind({})}

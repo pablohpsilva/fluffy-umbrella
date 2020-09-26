@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import { DropCSVJsonFile, UserList } from '@/components'
+import { DropCSVJSONFile, UserList } from '@/components'
 import { useUserResolverData, useUserQuery } from '@/hooks'
 
 const loadMoreStyle = {
@@ -28,7 +28,7 @@ const UseImporter = () => {
 
     return (
         <div>
-            <DropCSVJsonFile onChange={handleOnChange} onError={handleError} />
+            <DropCSVJSONFile onChange={handleOnChange} onError={handleError} />
             {users && users.length ? <h2>Imported users {users.length}</h2> : null}
             <UserList users={users} />
             <div style={loadMoreStyle}>

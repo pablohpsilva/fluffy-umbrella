@@ -19,6 +19,22 @@ export const defaultProps = {
 
 # DropFile
 
+This component was created to support both drop files on an area
+or clicking and selecting a file from your computer.
+
+## Props
+
+| Name       | Description                                                              | Type        | default                                |
+| ---------- | ------------------------------------------------------------------------ | ----------- | -------------------------------------- |
+| text       | Default text that will appear on the drop area                           | `string`    | `'Please click (or drop) here a file'` |
+| accept     | File extensions accepted                                                 | `string`    | `'.json,.csv'`                         |
+| multiple   | Accept multiple files to upload                                          | `boolean`   | `false`                                |
+| size       | Maximum file size                                                        | `number`    | `1e7`                                  |
+| onDrop     | Whenever there's a file drop, this will be called                        | `function`  | `(ev) => null`                         |
+| onDragOver | Whenever there's a file dragging over the drop area, this will be called | `function`  | `(ev) => null`                         |
+| onChange   | Whenever there's a change (file drop, file input) this will be called    | `function`  | `(ev) => null`                         |
+| style      | CSS style extension                                                      | `CSS Style` | `{}`                                   |
+
 <Canvas>
     <Story name="main" args={defaultProps}>
         {Template.bind({})}
