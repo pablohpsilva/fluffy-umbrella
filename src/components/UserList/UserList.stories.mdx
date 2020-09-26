@@ -1,0 +1,100 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+import UserList from '.'
+
+<Meta title="Components/UserList" component={UserList} />
+
+export const Template = args => <UserList {...args} />
+export const defaultProps = {
+    users: [
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'ask2djhasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askdj6hasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askdjh7asd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askd8jhasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        }
+    ]
+}
+
+# UserList
+
+This component will display a list of user related data. Internally it uses
+the `UserItem` component. When `UserItem` are available, clicking on it
+will show all data available.
+
+## Props
+
+| Name  | Description                       | Type        | default       |
+| ----- | --------------------------------- | ----------- | ------------- |
+| user2 | A list of users data for sampling | `User[]`    | `[{...},...]` |
+| style | CSS style extension               | `CSS Style` | `{}`          |
+
+### Users prop
+
+This is an array of the following User object. The properties are shown below.
+
+| Name      | Description | Type     | default |
+| --------- | ----------- | -------- | ------- |
+| title     | Title       | `string` | `''`    |
+| lastName  | Last name   | `string` | `''`    |
+| firstName | First name  | `string` | `''`    |
+| email     | Email       | `string` | `''`    |
+| picture   | Picture     | `string` | `''`    |
+| userId    | UserId      | `string` | `''`    |
+| login     | Login       | `string` | `''`    |
+| password  | Password    | `string` | `''`    |
+| gender    | Gender      | `string` | `''`    |
+| URL       | URL         | `string` | `''`    |
+| address   | Address     | `string` | `''`    |
+
+<Canvas>
+    <Story name="main" args={defaultProps}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

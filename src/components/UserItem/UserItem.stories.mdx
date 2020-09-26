@@ -1,0 +1,76 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+import UserItem from '.'
+
+<Meta title="Components/UserItem" component={UserItem} />
+
+export const Template = args => <UserItem {...args} />
+export const defaultProps = {
+    expanded: true,
+    user: {
+        title: 'Mr.',
+        lastName: 'Doe',
+        firstName: 'John',
+        email: 'johndoe@gmail.com',
+        picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+        userId: 'aidasjkd-has98da9s-7das7d89a-sd8asda',
+        login: 'johndoe',
+        password: 'eodnhoj',
+        gender: 'M',
+        URL: '',
+        address: '75 Baker Street'
+    }
+}
+
+# UserItem
+
+This component will display user related data. By clicking on it it will show all data available.
+
+## Props
+
+| Name     | Description                                             | Type                   | default      |
+| -------- | ------------------------------------------------------- | ---------------------- | ------------ |
+| expanded | Hides or shows the extra data from a given user         | `boolean`              | `false`      |
+| user     | User data for sampling                                  | `User`                 | `{...}`      |
+| onClick  | Click handler triggers when clicking on the sample area | `(user: User) => void` | `() => null` |
+| style    | CSS style extension                                     | `CSS Style`            | `{}`         |
+
+### User prop
+
+| Name      | Description | Type     | default |
+| --------- | ----------- | -------- | ------- |
+| title     | Title       | `string` | `''`    |
+| lastName  | Last name   | `string` | `''`    |
+| firstName | First name  | `string` | `''`    |
+| email     | Email       | `string` | `''`    |
+| picture   | Picture     | `string` | `''`    |
+| userId    | UserId      | `string` | `''`    |
+| login     | Login       | `string` | `''`    |
+| password  | Password    | `string` | `''`    |
+| gender    | Gender      | `string` | `''`    |
+| URL       | URL         | `string` | `''`    |
+| address   | Address     | `string` | `''`    |
+
+### CSS styles
+
+```
+{
+    wrapper: {/* CSS Object */}
+    grid: {/* CSS Object */},
+    gridContent: {/* CSS Object */},
+    gridImage: {/* CSS Object */},
+    gridButton: {/* CSS Object */},
+    button: {/* CSS Object */},
+    image: {/* CSS Object */},
+    h2: {/* CSS Object */},
+    h3: {/* CSS Object */},
+    detailsWrapper: {/* CSS Object */},
+    details: {/* CSS Object */}
+}
+```
+
+<Canvas>
+    <Story name="main" args={defaultProps}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

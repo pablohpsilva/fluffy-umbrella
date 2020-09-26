@@ -1,6 +1,3 @@
-import { Mount } from '@/core'
-
-const root = document.querySelector('#root')
-
-// @ts-ignore
-Mount(root)
+export * from '@/components'
+export * from '@/hooks'
+export * from '@/utils'
