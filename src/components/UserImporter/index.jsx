@@ -3,8 +3,15 @@ import React, { useEffect } from 'react'
 import { DropCSVJsonFile, UserList } from '@/components'
 import { useUserResolverData, useUserQuery } from '@/hooks'
 
+const loadMoreStyle = {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+}
+
 const UseImporter = () => {
-    const { data, fetchMore } = useUserQuery()
+    const { data, fetchMore, isLast, isLoading } = useUserQuery()
     const { users, resolveUsers } = useUserResolverData()
 
     const handleOnChange = users => {
@@ -23,10 +30,14 @@ const UseImporter = () => {
         <div>
             <DropCSVJsonFile onChange={handleOnChange} onError={handleError} />
             {users && users.length ? <h2>Imported users {users.length}</h2> : null}
-            <button onClick={fetchMore} type="button">
-                click
-            </button>
             <UserList users={users} />
+            <div style={loadMoreStyle}>
+                {!(isLast || isLoading) && (
+                    <button onClick={fetchMore} type="button">
+                        Load more
+                    </button>
+                )}
+            </div>
         </div>
     )
 }

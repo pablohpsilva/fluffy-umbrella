@@ -6,6 +6,7 @@ const useUserQuery = ({ url, limit, offset: _offset, skip } = defaultProps) => {
     const [data, setData] = useState([])
     const [lastData, setLastData] = useState(undefined)
     const [offset, setOffset] = useState(_offset)
+    const [isLoading, setIsLoading] = useState(false)
     const [isLast, setIsLast] = useState(false)
 
     const queryUsers = (users = []) => {
@@ -16,6 +17,7 @@ const useUserQuery = ({ url, limit, offset: _offset, skip } = defaultProps) => {
     }
 
     const fetchMore = async () => {
+        setIsLoading(true)
         const rawUsers = await window
             .fetch(`${url}/users?limit=${limit}&offset=${offset}`)
             .then(response => response.json())
@@ -26,6 +28,7 @@ const useUserQuery = ({ url, limit, offset: _offset, skip } = defaultProps) => {
         setData([...data, ...users])
 
         if (!users.length) setIsLast(true)
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -39,6 +42,7 @@ const useUserQuery = ({ url, limit, offset: _offset, skip } = defaultProps) => {
         fetchMore,
         offset,
         lastData,
+        isLoading,
         isLast
     }
 }
