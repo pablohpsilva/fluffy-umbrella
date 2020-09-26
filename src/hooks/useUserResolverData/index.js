@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+// Resolver functions
 const userIdResolver = user => user?.userId ?? user?.email
 const loginResolver = user => user?.login
 const passwordResolver = user => user?.password
@@ -18,6 +19,7 @@ const pictureResolver = user => {
 const URLResolver = user => user?.URL
 const addressResolver = user => user?.address
 
+// Utilitary array so I can resolve all user data at once
 const userResolverArray = [
     userIdResolver,
     loginResolver,
@@ -32,6 +34,7 @@ const userResolverArray = [
     addressResolver
 ]
 
+// Mapper function responsible for resolving and adjusting user data
 const userMapper = user => {
     const [
         userId,
@@ -65,6 +68,7 @@ const userMapper = user => {
 const userExistsOnList = (oldList = []) => user =>
     !oldList.find(oldUser => oldUser?.userId === user?.userId || oldUser?.email === user?.email)
 
+// Function eliminates duplicates based on `userId` and `email`
 const filterUsers = (oldUsers = [], newUsers = []) => {
     if (!oldUsers.length) return newUsers
     if (!newUsers.length) return oldUsers
