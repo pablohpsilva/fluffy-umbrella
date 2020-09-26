@@ -70,9 +70,9 @@ DropFile.defaultProps = {
     accept: '.json,.csv',
     multiple: false,
     size: 1e7,
-    onDrop: () => null,
+    onDrop: ev => console.log(ev),
     onDragOver: () => null,
-    onChange: () => null,
+    onChange: files => console.log(files),
     style: {}
 }
 

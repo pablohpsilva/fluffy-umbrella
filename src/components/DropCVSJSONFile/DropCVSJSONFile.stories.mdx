@@ -8,10 +8,9 @@ export const Template = args => <DropCVSJSONFile {...args} />
 export const defaultProps = {
     text: 'Please click (or drop) here your .CSV or .JSON file',
     accept: '.json,.csv',
-    multiple: false,
     size: 1e7,
-    onChange: ev => null,
-    onError: error => null
+    onChange: files => console.log(files),
+    onError: error => console.log(error)
 }
 
 # DropCVSJSONFile
