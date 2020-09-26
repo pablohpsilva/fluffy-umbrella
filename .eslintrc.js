@@ -15,6 +15,7 @@ module.exports = {
     rules: {
         indent: 0,
         'arrow-parens': 0,
+        'object-curly-newline': 0,
         'function-paren-newline': 0,
         'implicit-arrow-linebreak': 0,
         'react/jsx-pascal-case': 0,

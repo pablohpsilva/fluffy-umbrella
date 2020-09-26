@@ -1,23 +1,18 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
 
-import DropFile from '.'
+import DropCSVJsonFile from '.'
 
-<Meta title="Components/DropFile" component={DropFile} />
+<Meta title="Components/DropCSVJsonFile" component={DropCSVJsonFile} />
 
-export const Template = args => <DropFile {...args} />
-
+export const Template = args => <DropCSVJsonFile {...args} />
 export const defaultProps = {
     text: 'Please click (or drop) here your .CSV or .JSON file',
     accept: '.json,.csv',
     multiple: false,
     size: 1e7,
-    onDrop: () => console.log('dropped'),
-    onDragOver: () => console.log('dragging over'),
-    onChange: () => console.log('changed'),
-    style: {}
+    onChange: ev => console.log('changed', ev),
+    onError: error => null
 }
-
-# DropFile
 
 <Canvas>
     <Story name="main" args={defaultProps}>
