@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-import { uuid } from '@/utils/uuid'
+import { uuid } from '@/utils'
 
 const dropFileWrapperStyle = {
     display: 'flex',

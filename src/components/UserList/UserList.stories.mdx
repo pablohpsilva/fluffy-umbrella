@@ -1,0 +1,69 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+import UserList from '.'
+
+<Meta title="Components/UserList" component={UserList} />
+
+export const Template = args => <UserList {...args} />
+export const defaultProps = {
+    users: [
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'ask2djhasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askdj6hasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askdjh7asd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        },
+        {
+            title: 'Mr.',
+            lastName: 'Doe',
+            firstName: 'John',
+            email: 'johndoe@gmail.com',
+            picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+            userId: 'askd8jhasd',
+            login: 'johndoe',
+            password: 'eodnhoj',
+            gender: 'M',
+            URL: '',
+            address: '75 Baker Street'
+        }
+    ]
+}
+
+<Canvas>
+    <Story name="main" args={defaultProps}>
+        {Template.bind({})}
+    </Story>
+</Canvas>
