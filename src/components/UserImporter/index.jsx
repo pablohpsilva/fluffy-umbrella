@@ -1,21 +1,31 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 
 import { DropCSVJsonFile, UserList } from '@/components'
-import { resolver } from '@/resources/user/resolver'
+import { useUserResolverData, useUserQuery } from '@/hooks'
 
 const UseImporter = () => {
-    const [users, setUsers] = useState([])
+    const { data, fetchMore } = useUserQuery()
+    const { users, resolveUsers } = useUserResolverData()
 
     const handleOnChange = users => {
-        setUsers(resolver(users))
+        resolveUsers(users)
     }
 
     const handleError = error => console.log(error)
 
+    useEffect(() => {
+        if (data.length) {
+            resolveUsers(data)
+        }
+    }, [data])
+
     return (
         <div>
             <DropCSVJsonFile onChange={handleOnChange} onError={handleError} />
-            {users && users.length ? <h2>Imported users</h2> : null}
+            {users && users.length ? <h2>Imported users {users.length}</h2> : null}
+            <button onClick={fetchMore} type="button">
+                click
+            </button>
             <UserList users={users} />
         </div>
     )

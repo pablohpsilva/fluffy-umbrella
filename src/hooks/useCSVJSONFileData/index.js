@@ -1,5 +1,18 @@
 import { useState, useEffect } from 'react'
-import { readCSVFile, readJSONFile } from '@/resources/file'
+import csv from 'csvtojson'
+
+const readFilePartial = func => ({ currentTarget: { result } }) =>
+    new Promise((resolve, reject) => {
+        try {
+            return func(resolve, result)
+        } catch (error) {
+            reject(error)
+        }
+    })
+
+const readCSVFile = readFilePartial((resolve, result) => csv({ output: 'json' }).fromString(result).then(resolve))
+
+const readJSONFile = readFilePartial((resolve, result) => resolve(JSON.parse(result)))
 
 const readFile = (accept, files) => {
     if (!files || !files.length) {
@@ -43,7 +56,6 @@ const useCSVJSONFileData = (accept, files) => {
             }
         }
         readFileAsync()
-        return () => null
     }, [accept, files])
 
     return {
