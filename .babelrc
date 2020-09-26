@@ -1,0 +1,14 @@
+{
+    "plugins": [
+        [
+            "babel-plugin-module-resolver/lib/index.js",
+            {
+                "root": [],
+                "alias": {
+                    "@": "./src"
+                }
+            }
+        ]
+    ],
+    "presets": ["env", "react", "stage-0"]
+}
