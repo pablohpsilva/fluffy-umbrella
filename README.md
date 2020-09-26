@@ -10,11 +10,35 @@ Here's the exercise:
 
 Since it is requested a simple component, this repository is a **UI library** only.
 
-## Special details
+### Why this package name?
+
+I have no idea. I liked it, that's all.
+
+### Special details
 
 -   Running `npm start` will start the storybook;
 -   This library is using **peerDependencies** instead of dependencies. You should install them in your project (listed at the end);
--
+
+## List of tasks
+
+-   [x] Create a component that enables the user to load user data from files and/or a service;
+-   [x] Component should be able to display more than just user name;
+-   [x] Flexible user data resolver (check `src/hooks/useUserResolver`);
+-   [x] Hooks for manipulating and fetching data (check `src/hooks`);
+-   [x] Components playground via Storybook;
+
+Fluffy-umbrella offers you out of the box the following:
+
+-   Components
+    -   **UserImport**: a full component able to display data from `CSV` or `JSON` files and also retrieve data from a service;
+    -   **UserItem**: a component able to show user data;
+    -   **UserList**: a component able to show a list of user data;
+    -   **DropFile**: you can drop or select any files and get it ready for uploading;
+    -   **DropCSVJSONFile**: you can drop or select any `CSV` or `JSON` file and get it ready for uploading;
+-   Hooks
+    -   **useCSVJSONFileData**: can manipulate a File type object and return it in JSON format. Depends on `csvtojson` package;
+    -   **useUserQuery**: can fetch user data from a given service;
+    -   **useUserResolver**: can normalize and resolve user data that may vary from one sorce to another and bring forth a unique representation. This hook is the core for data consistency of this library.
 
 ## How to use it?
 
@@ -44,6 +68,12 @@ After it, do the following:
 
 ```sh
 cd go/to/your/project && npm link fluffy-umbrella
+```
+
+In your project, you can import the components and hooks like:
+
+```javascript
+import { UserImport, useCSVJSONFileData } from 'fluffy-umbrella'
 ```
 
 ## PeerDependencies
