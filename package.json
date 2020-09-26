@@ -2,7 +2,7 @@
     "name": "fluffy-umbrella",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "lib/index.js",
     "scripts": {
         "start": "start-storybook -p 6006",
         "build": "rimraf lib && babel src --out-dir lib --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\",\"src/**/*.stories.js\",\"src/stories\"",

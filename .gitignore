@@ -1,5 +1,5 @@
 /dist
-/build
+/lib
 logs
 *.log
 npm-debug.log*
@@ -16,7 +16,7 @@ coverage
 .grunt
 bower_components
 .lock-wscript
-build/Release
+lib/Release
 jspm_packages
 typings
 .npm
@@ -36,7 +36,3 @@ jest.config.js
 .eslintrc
 tsconfig.json
 webpack.config.js
-*.tsbuildinfo
-*.d.ts
-# Jest Storybook addon
-.jest-test-results.json
