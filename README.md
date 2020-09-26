@@ -1,5 +1,7 @@
 # fluffy-umbrella
 
+Live Storybook: [https://pablohpsilva.github.io/fluffy-umbrella/](https://pablohpsilva.github.io/fluffy-umbrella/)
+
 Here's the exercise:
 
 > The goal of the exercise is to create a list of test-takers (test-takers can be seen as users).
