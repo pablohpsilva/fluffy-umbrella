@@ -8,9 +8,12 @@
         "start:reload": "webpack-dev-server --config=config/webpack.dev.js",
         "start:style": "cross-env MAP_STYLE=true webpack-dev-server --config=config/webpack.dev.js --hot",
         "build": "webpack --config=config/webpack.prod.js",
+        "build:babel": "webpack --config=config/webpack.prod.js",
         "analyze": "cross-env ENABLE_ANALYZER=true yarn build",
         "test": "jest",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook"
     },
     "dependencies": {
         "react": "^16.4.1",
@@ -18,6 +21,10 @@
         "react-toast-notifications": "^2.4.0"
     },
     "devDependencies": {
+        "@storybook/addon-actions": "^6.0.22",
+        "@storybook/addon-essentials": "^6.0.22",
+        "@storybook/addon-links": "^6.0.22",
+        "@storybook/react": "^6.0.22",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.5",
         "babel-plugin-module-resolver": "^4.0.0",
@@ -37,6 +44,7 @@
         "node-sass": "^4.9.2",
         "optimize-css-assets-webpack-plugin": "^5.0.0",
         "prop-types": "^15.7.2",
+        "react-is": "^16.13.1",
         "react-test-renderer": "^16.4.1",
         "sass-loader": "^7.0.3",
         "style-loader": "^0.21.0",
