@@ -5,7 +5,10 @@ import { UserItem } from '@/components'
 const UserList = ({ users }) => {
     const [expandedUserId, setExpandedUserId] = useState(-1)
 
-    const handleOnClick = ({ userId }) => setExpandedUserId(userId)
+    const handleOnClick = ({ userId }) => {
+        if (userId === expandedUserId) return setExpandedUserId(-1)
+        setExpandedUserId(userId)
+    }
 
     return users.map(user => (
         <UserItem

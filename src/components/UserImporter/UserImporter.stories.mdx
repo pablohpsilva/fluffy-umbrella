@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks'
+
+import UserImporter from '.'
+
+<Meta title="Components/UserImporter" component={UserImporter} />
+
+export const Template = args => <UserImporter {...args} />
+export const defaultProps = {
+    expanded: true,
+    user: {
+        title: 'Mr.',
+        lastName: 'Doe',
+        firstName: 'John',
+        email: 'johndoe@gmail.com',
+        picture: 'https://randomuser.me/api/portraits/med/women/15.jpg',
+        userId: 'aidasjkd-has98da9s-7das7d89a-sd8asda',
+        login: 'johndoe',
+        password: 'eodnhoj',
+        gender: 'M',
+        URL: '',
+        address: '75 Baker Street'
+    }
+}
+
+<Canvas>
+    <Story name="main" args={defaultProps}>
+        {Template.bind({})}
+    </Story>
+</Canvas>

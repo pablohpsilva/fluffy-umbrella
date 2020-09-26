@@ -69,7 +69,7 @@ const defaultUser = {
     address: ''
 }
 
-const UserItem = ({ expanded = false, user = defaultUser, onClick = () => console.log('clicked'), style = {} }) => {
+const UserItem = ({ expanded = false, user = defaultUser, onClick = () => null, style = {} }) => {
     const userExtraData = fieldsMapper(user)
     const handleOnClick = () => {
         onClick(user)
