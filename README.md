@@ -76,6 +76,12 @@ In your project, you can import the components and hooks like:
 import { UserImport, useCSVJSONFileData } from 'fluffy-umbrella'
 ```
 
+### production mode
+
+```sh
+npm run build
+```
+
 ## PeerDependencies
 
 -   React
