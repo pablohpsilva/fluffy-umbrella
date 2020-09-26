@@ -6,10 +6,8 @@
     "scripts": {
         "start": "start-storybook -p 6006",
         "build": "rimraf lib && babel src --out-dir lib --ignore \"src/**/*.spec.js\",\"src/**/*.test.js\",\"src/**/*.stories.js\",\"src/stories\"",
-        "test": "jest",
-        "test:generate-output": "jest --json --outputFile=.jest-test-results.json",
-        "test:coverage": "jest --coverage",
-        "build-storybook": "build-storybook",
+        "build:storybook": "build-storybook",
+        "deploy": "npm i && npm run install:peers && build-storybook && deploy-to-github-pages -d storybook-static",
         "install:peers": "npm-install-peers"
     },
     "peerDependencies": {
@@ -46,6 +44,7 @@
         "babel-jest": "^23.4.2",
         "babel-loader": "^8.1.0",
         "babel-plugin-module-resolver": "^4.0.0",
+        "deploy-to-github-pages": "^1.0.0",
         "enzyme": "^3.3.0",
         "enzyme-adapter-react-16": "^1.1.1",
         "enzyme-to-json": "^3.3.4",

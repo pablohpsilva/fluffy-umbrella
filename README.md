@@ -26,13 +26,25 @@ npm i && npm run install:peers
 
 Now you can run the project by
 
-```
+```sh
 npm start
 ```
 
-This will launch the Storybook for this library.
+The command above will launch the Storybook for this library.
 
-**This is a component library!**
+### Linking
+
+You can always link this library into your project
+
+```sh
+cd fluffly-umbrella && npm i && npm run install:peers && npm link
+```
+
+After it, do the following:
+
+```sh
+cd go/to/your/project && npm link fluffy-umbrella
+```
 
 ## PeerDependencies
 
