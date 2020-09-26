@@ -12,10 +12,11 @@ Since it is requested a simple component, this repository is a **UI library** on
 
 ### Why this package name?
 
-I have no idea. I liked it, that's all.
+No idea. I liked it, that's all.
 
 ### Special details
 
+-   I wanted to create the smallest possible react component library. This is why I'm not adding extra dependencies that could require from the project using it css/files/other special loaders. This is simple React and one dependency to help me manage `CVS` files;
 -   Running `npm start` will start the storybook;
 -   This library is using **peerDependencies** instead of dependencies. You should install them in your project (listed at the end);
 

@@ -36,3 +36,4 @@ jest.config.js
 .eslintrc
 tsconfig.json
 webpack.config.js
+.DS_STORE
