@@ -26,7 +26,7 @@ No idea. I liked it, that's all.
 
 -   [x] Create a component that enables the user to load user data from files and/or a service;
 -   [x] Component should be able to display more than just user name;
--   [x] Flexible user data resolver (check `src/hooks/useUserResolver`);
+-   [x] Flexible user data resolver (check `src/hooks/useUserResolverData`);
 -   [x] Hooks for manipulating and fetching data (check `src/hooks`);
 -   [x] Components playground via Storybook;
 
@@ -41,7 +41,7 @@ Fluffy-umbrella offers you out of the box the following:
 -   Hooks
     -   **useCSVJSONFileData**: can manipulate a File type object and return it in JSON format. Depends on `csvtojson` package;
     -   **useUserQuery**: can fetch user data from a given service;
-    -   **useUserResolver**: can normalize and resolve user data that may vary from one sorce to another and bring forth a unique representation. This hook is the core for data consistency of this library.
+    -   **useUserResolverData**: can normalize and resolve user data that may vary from one sorce to another and bring forth a unique representation. This hook is the core for data consistency of this library.
 
 ## How to use it?
 
